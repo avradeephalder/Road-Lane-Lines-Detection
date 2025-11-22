@@ -9,9 +9,8 @@ import cv2
 import numpy as np
 from torch.amp import autocast
 
-# -----------------------------
-# Model definition (same as training)
-# -----------------------------
+
+# Model definition
 class DoubleConv(nn.Module):
     def __init__(self, in_ch, out_ch):
         super().__init__()
@@ -61,9 +60,7 @@ class UNet(nn.Module):
         u1 = self.u1(c2); c1 = self.c1(torch.cat([u1, d1], dim=1))
         return self.out(c1)
 
-# -----------------------------
 # Globals and diagnostics
-# -----------------------------
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 def _device_banner():
@@ -86,9 +83,7 @@ _device_banner()
 model = None
 IMG_H, IMG_W = 320, 640
 
-# -----------------------------
 # Utilities
-# -----------------------------
 def load_model(model_path: str):
     """Load trained model once at startup"""
     global model
@@ -129,9 +124,7 @@ def _forward(tens: torch.Tensor, context_hint: str = "") -> torch.Tensor:
         logits = model(tens)
     return logits
 
-# -----------------------------
 # Image path
-# -----------------------------
 def process_image(input_path: str, output_path: str):
     """Process single image and save visualization"""
     if model is None:
@@ -161,9 +154,7 @@ def process_image(input_path: str, output_path: str):
     print(f"[ML] process_image done in {dt:.3f}s -> {os.path.basename(output_path)}")
     return output_path
 
-# -----------------------------
 # Video path (with FFmpeg re-encode to H.264)
-# -----------------------------
 def process_video(input_path: str, output_path: str):
     """Process video frame by frame, re-encode with FFmpeg to H.264 for browser playback"""
     if model is None:

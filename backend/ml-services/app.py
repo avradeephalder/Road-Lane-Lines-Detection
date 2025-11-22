@@ -66,7 +66,7 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     finally:
-        # Cleanup output after sending (optional - can keep for caching)
+        # Cleanup output after sending
         if os.path.exists(output_path):
             try:
                 os.remove(output_path)
