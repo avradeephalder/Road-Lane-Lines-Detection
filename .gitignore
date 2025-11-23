@@ -1,0 +1,110 @@
+# ---------------- Node.js ----------------
+# Dependencies
+node_modules/
+**/node_modules/
+package-lock.json
+**/package-lock.json
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+**/dist/
+**/build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ---------------- Python ----------------
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+**/.venv/
+**/venv/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# ---------------- Environment Variables ----------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+**/.env
+
+# ---------------- Temporary/Upload Folders ----------------
+# Express backend uploads
+backend/express-backend/uploads/
+backend/express-backend/outputs/
+
+# ML service uploads
+backend/ml-service/uploads/
+backend/ml-service/outputs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# ---------------- OS/Editor Files ----------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+desktop.ini
+ehthumbs.db
+*.lnk
+
+# Linux
+*~
+
+# IDE files
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ---------------- Testing/Coverage ----------------
+coverage/
+.nyc_output/
+htmlcov/
+.coverage
+.pytest_cache/
+.tox/
+
+# ---------------- Model Files (Optional) ----------------
+# Uncomment if you don't want to track large model files
+# backend/ml-service/models/*.pth
+# backend/ml-service/models/*.pt
+
+# ---------------- Misc ----------------
+*.local
+.cache/
